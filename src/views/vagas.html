@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="theme-color" content="#FFA700"/>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" type="img/x-icon" href="img/fav.ico"/>
+  <title>TenVagas</title>
+  <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/main2.css"/>
+
+  <!--Reflesh-->
+	<!--<script language="javascript">
+		setTimeout(function(){
+			window.location.reload(1);
+		}, 150000);
+	</script>-->
+
+  <!--Política de uso-->
+  <script>
+    var i = 0;
+    function mover() {
+      if (i == 0) {
+        i = 0;
+        var elem = document.getElementById("myBar");
+        var width = 10;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+            i = 0;
+            window.alert(':: Olá, Colaborador(a)!\n1) As vagas colaborativas são disponibilizadas por tempo integral.\n2) Só aceite vagas na localização correta mostrada no "MAPA".\n3) Contate somente os "Membros Oficiais" cadastrados na Plataforma e Online no Mapa.\n4) Você têm 00:10:00 "Dez minutos" para chegar na vaga que resrevou.\n4) Ative o serviço de localização do seu dispositivo para consultar sua aproximação.\n 5) A TenVagas não solicita dados pessoais de qualquer tipo!\n\n Bem-Vindo!')
+          } else {
+            width++;
+            elem.style.width = width + "%";
+            elem.innerHTML = width  + "%";
+          }
+        }
+      }
+    }
+  </script>
+<style>
+  /*Navbar*/
+   .logo{margin: 7px 16px;opacity: 0.9;position: absolute;}
+   .w3-bar{height: 40px;}
+   .w3-right{font-family: Arial;opacity: 0.9;z-index: 1;width: 200px;height:44px;float: right;margin-top: -8px;}
+   .w3-bar-item{border-radius: 10px;box-shadow: 2px 2px 2px rgba(0,0,0,0.4);font-size: 12px;}
+   ul{display: block;z-index: 1;position: absolute;padding: 0px;}
+   li{list-style: none;display: block;margin-left:4px;float:left;}
+   hr{border: none;}
+   img {max-width: 100%;height: auto;background-size: contain;}
+   </style>
+
+</head>
+<!--<body id="myPage" onload="time()" data-spy="scroll" data-target=".navbar" data-offset="50" onLoad="textticker()">-->
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <!-- Navbar (sit on top) ORIGINAL -->
+  <div class="w3-top" style="height: 40px;">
+    <div class="w3-bar">
+      <!--<span style="color:red;font-size: 24px;margin: 10px 10px;font-family:sans-serif;">Ten<span style="color:#00A813;">Vagas</span></span>-->
+      <img class="logo" src="img/22.png" width="126" />
+      <div class="w3-right">
+    <ul>
+    <li>
+         <li>
+          <select nome="select-location" id="select-location">
+            <option value="-23.975817, -46.318372">Consultar Locais</option>
+            <option title="1"value="-23.996499, -46.255697">Guarujá</option>
+            <option title="2" value="-23.815317, -45.366219">Ilha Bela</option>
+            <option title="3" value="-24.172384, -46.761833">Itanhaém</option>
+            <option title="4" value="-24.117010, -46.661640">Mongaguá</option>
+            <option title="5" value="-24.261653, -46.914338">Peruíbe</option>
+            <option title="6" value="-24.013545, -46.414947">Praia Grande</option>
+            <option title="7" value="-23.973429, -46.322544">Santos</option>
+            <option title="8" value="-23.968912, -46.378417">São Vicente</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  
+<script>
+    //SELECTOR DOS LOCAIS E ZOOM
+    document.getElementById('select-location').addEventListener('change', function(e){
+      let coords = e.target.value.split(",");
+      map.flyTo(coords, 13);
+    })
+  </script>
+  
+    <!--CODIGO ORIGINAL PERCISTENTE-->
+    <div id="map-template"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/membros/home_1.js"></script>
+    <script src="/membros/home_2.js"></script>
+    <script src="/membros/home_adm.js"></script>
+
+
+    <footer>
+    <p>Seja Membro!</p>
+    </footer>   
+
+</body>
+</html>
+
+

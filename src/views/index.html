@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta name="theme-color" content="#FEC12B">
+<meta charset="UTF-8" />
+<title>TenVagas Colaborativas</title>
+<!--<meta http-equiv="refresh" content="4; url=vagas">-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ <link rel="shortcut icon" type="image/x-icon" href="img/fav.ico"/>
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+ 
+
+ <!--Jquery-->
+ <link rel="stylesheet" href="_assets/css/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+  <!--<script src="_assets/js/jquery.js"></script>-->
+  <script src="_assets/js/jquery.mobile-1.4.5.min.js"></script>
+
+ <meta name="author" content="WAV"/>
+ <meta name="copyright" content="© 2019 (tenvagas)"/>
+ <meta http-equiv="content-language" content="fr, pt-br, en-US, it" />
+ <meta name="description" content="TenVagas - Vagas colaborativas disponibilizadas para estacionar - Membros online no Mapa com as melhores vagas para você!"/>
+ <meta name="keywords" content="vagas para estacionar, vagas colaborativas, vagas, estacionar, TenVagas, TenVaga, localizaçõa, tenvagas, tenvaga, membros, mapa, vagas colaborativas, vagas onlune"/>
+ <meta name="DC.Suject" content="vagas, estacionar, mapa, localizacao, membros, tenvagas, TenVagas, vagas online, vaga, TenVaga" />
+ <meta name="google" content="translate" />
+ <meta name="robots" content="index,follow">
+ <meta name="DC.date.created" content="2021-04-20" />
+ <meta name="DC.date.modified" content="2021-04-28" />
+ <meta name="DC.creator.address" content="tenvagas@outlook.com" />
+ <meta name="DC.Identifier" content="https://www.tenvagas.com.br/">
+ <meta property="og:title" content="TenVagas Colaborativas - Estacionar" />
+ <meta property="og:description" content="Vagas colaborativas para estacioar - Membros online."/>
+ <meta property="og: image" content= "https://www.tenvagas.com.br/images/tv.png"/>
+ <meta property="og:url" content="https://www.tenvagas.com.br/">
+ <meta property="og:type" content="website" />
+ <style>
+  /* reset de margens */
+  * {
+    margin: 0;
+    padding:0;
+    font-size: 13px;
+    font-weight: normal;
+    font-family:sans-serif;    
+    color: white;
+  }
+  /* para garantir que estes elementos ocuparão toda a tela */
+  body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Tahoma, sans-serif;
+    /*background-color: #2A2F33;*/
+    background-image: radial-gradient(circle at 45.38% -2.83%, #00F230 0, #00871B 50%, #000701 100%);
+    /*background-image: radial-gradient(circle at 45.38% -2.83%, #FEC12B 0, #FE9B2B 50%, #000701 100%);*/
+    /*background-image: radial-gradient(circle at 45.38% -2.83%, #364235 0, #363435 50%, #000701 100%);*/
+  }
+  body {
+    background:url(images/2.pn) center center no-repeat fixed ;
+    -webkit-background-size: 50%;
+    -moz-background-size: 50%;
+    -o-background-size: 50%;
+    background-size: 50%;
+    background-position:50% 40%;
+
+  }
+
+  .container1{
+  height: 100vh;
+  width: 100hw;
+  margin: 0px auto;
+
+	height: 500px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: stretch;
+	align-content: stretch;
+}
+</style>
+
+<style type="text/css">
+ /**/
+ .externa {
+  width: 100%;
+  height: 100%;
+  display:table;
+  background-color:green;
+  background: url(images/bek1.png);
+  /*background:#2A8E00 url(images/bek1.png) center center no-repeat fixed;z-index: 0;*/
+}
+.interna {
+  text-align: center;
+  vertical-align:middle;
+  display:table-cell;
+}
+
+ /*RODAPÉ*/
+ footer{font-weight: bolder; font-size:18px;color:white;
+  position: fixed;right: 0;bottom: 0;width: 100%;height:250px;
+  text-align: center;z-index:1;padding-bottom:4px;
+} 
+.logotipo{background-color:yellow;padding:3px;border-radius: 50%;}
+
+/* unvisited link */
+#w3s{width: 102px;margin: 0px auto;}
+
+#w3s:link {
+ color:white;
+ background: white;
+ border:none;
+}
+
+ /* visited link */
+ .btn{background-color: transparent;}
+
+ .btn:visited {
+     color: black;
+     background: yellow;
+     border:none;
+     color:black;
+   }
+   /* mouse over link */
+   .btn:hover {
+     color:black;
+     background:#B6FF00;
+     border:none;
+   
+   }
+   /* selected link */
+   .btn:active {
+    color:black;
+     background:#FEC12B;
+     border:none;
+   }
+
+/*Botão visited link */
+/*
+.btn{background-color:#FEC12B;border: none;color: white;
+font-size: 10px;border-radius: 50%;width: 80px;height: 80px;text-align: center;padding: 3px;
+box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.90);}
+.btn:hover{color:green;}
+.btn:visited {color: purple;}
+.btn:active {color: white;}
+.btn:focus{background-color:#00FF00;}
+*/
+</style>
+
+
+   
+<style type="text/css"> 
+div.container {top: 0; left: 0; width: 100%; height: 100%;
+    position: fixed; display: table;}
+    .imgfix{background:url(img/19.png);
+        background-repeat: no-repeat;
+        width: 90px;
+        height:90px;
+        margin: 0 auto;
+        background-position: center;
+        background-size:60%;z-index: 1;border-radius: 50%;
+        border: 1px dotted rgb(218, 241, 12);
+        padding: 3px;
+        
+        box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.90);
+        border:0px dashed #FEC12B;
+        }
+  
+        .imgfix:hover{border:0px solid #FEC12B;}
+    
+      /*Animation-carregar*/
+      #load{
+       width: 90px;
+       height:100px;
+       
+       /*border-radius: 50%;*/
+       /*border-top-color:transparent;*/
+       margin: -10px -4px;
+       color: yellow;
+       animation: load 6s linear infinite reverse;
+       z-index: 1;
+       border: 0px solid white;
+       background-repeat: no-repeat;
+       background-size:100%;
+       background-attachment: orange;
+       /*animation-iteration-count: initial;*/
+       animation-iteration-count: infinite;
+       background-image: url(img/2_logo.png);
+       
+      animation-fill-mode:   forwards;
+    /*animation-fill-mode:   forwards;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: none;
+      animation-play-state: running;*/
+    }
+
+@keyframes load{
+ to {
+   transform: rotate(360deg);
+ }
+}
+@keyframes loadFrames{
+ 0%{
+  transform: translate(0px) scale();
+}
+}
+</style>
+
+<style>
+  /*Pulse Animation*/
+.center {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+/*.circle {
+  background:transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1px 1px #0000001a;
+  border-bottom: 1px solid white;
+}*/
+.pulse {
+  animation: pulse-animation 3s infinite;
+}
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 1080px rgba(0, 0, 0, 0);
+  }
+}
+
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<section class="container1"></section>
+<div data-role="page" class="jqm-demos externa container" id="panel-fixed-page1" data-title="Panel fixed positioning">
+<div role="main" class="ui-content jqm-content jqm-fullwidth interna">
+
+
+<div class="externa">
+<div class="interna">
+<!--<p style="color: green;background-position: absolute;z-index: 1;"><img src="images/bone.png" width="140"><br></p>-->
+
+<div class="imgfix circle pulse">
+<div id="load" class="imglogo"></div>
+</div>
+
+
+<p style="font-size: 11px;color: white;">
+  <!--<img src="img/23.png" width="100" title="Logotipo TenVagas"><br>-->
+  <form action="vagas">
+    <button type="submit" class="btn">
+      <img src="img/boneco.gif" width="34"/>
+      <br>
+      <p>Consultar o Valet</p>
+    </button>
+ </form>
+</p>
+
+<!--<p style="padding:22px;"><a id="w3s" onclick="mover()">Consultar</a><img src="images/tv2.png" width="50" height="47" class="logotipo" title="Seja Membo no TenVagas"></p>-->
+
+</div><!--End interna-->
+</div><!--Externa-->
+
+
+</div>
+</div>
+</section>
+</body>
+</html>
